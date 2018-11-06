@@ -49,6 +49,9 @@ function onKeyUp(e) {
             };
             httpRequest.open('GET', 'http://www.omdbapi.com/?apikey=ed604f05&s=' + value);
             httpRequest.send();
+
+            target.children[index].id = '';
+            index = -1;
     }
 }
 function displaySearchResultList(focus) {
@@ -57,6 +60,8 @@ function displaySearchResultList(focus) {
         target.style.display = 'block';
     } else if(!hover) {
         target.style.display = 'none';
+        target.children[index].id = '';
+        index = -1;
     }
 }
 function searchResultList() {
