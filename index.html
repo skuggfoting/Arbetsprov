@@ -10,9 +10,14 @@
     <body>
         <div id="main-container">
             <img id="logo" src="./UI/assets/logo.svg">
-            <form action="#" onsubmit="onClick(event)">
+            <form action="#" onkeyup="onKeyUp(event)">
                 <img id="search" src="./UI/assets/search.svg">
-                <input placeholder="Search for something...">
+                <input
+                        onfocus="displaySearchResultList(true)"
+                        onblur="displaySearchResultList()"
+                        placeholder="Search for movies, series and games..."
+                >
+                <ul id="search-result-container"></ul>
             </form>
             <ul id="search-history-container"></ul>
         </div>

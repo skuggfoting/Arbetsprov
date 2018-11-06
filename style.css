@@ -3,7 +3,6 @@ html {
     font-size: .3125vw;
     font-family: sans-serif;
 }
-
 @media (min-width: 420px) {
     html {
         font-size: 1.3px;
@@ -15,8 +14,9 @@ html {
     }
 }
 body {
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding-bottom: 50rem;
     background: linear-gradient(#022851, #3c58a8);
 }
 form {
@@ -65,6 +65,9 @@ input {
     form {
         width: calc(100vw - 64rem);
     }
+    #search-result-container {
+        width: calc(100vw - 104rem);
+    }
 }
 input:focus {
     background-color: #b3beca;
@@ -80,6 +83,30 @@ input:focus {
     height: 100%;
     max-width: 1000px;
     margin: auto;
+}
+#search-result-container {
+    display: none;
+    position: absolute;
+    top: 171rem;
+    width: calc(100vw - 64rem);
+    max-width: 1000px;
+    margin: 0;
+    padding: 0;
+    background-color: #8092a7;
+    border-radius: 3rem;
+}
+.search-result-list-item {
+    list-style-type: none;
+    padding: 5rem 10rem 5rem 40rem;
+    cursor: pointer;
+}
+.search-result-list-item:hover {
+    background-color: #b3beca;
+}
+.search-result-list-item-text {
+    font-size: 15rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 #search-history-container {
     width: 100%;
@@ -102,6 +129,9 @@ input:focus {
 }
 .list-item:hover > .list-item-text-container {
     padding-right: 38rem;
+}
+#active {
+    background-color: #b3beca;
 }
 .title {
     overflow: hidden;
